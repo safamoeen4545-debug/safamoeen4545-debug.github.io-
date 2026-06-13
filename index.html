@@ -13,28 +13,29 @@
             box-sizing: border-box;
         }
 
+        /* ---------- DARK THEME using your color palette ---------- */
         body {
             font-family: 'Inter', sans-serif;
-            background: #ECF0F1;  /* lightest from palette */
-            color: #2C3E50;
+            background: #2C3E50;  /* dark navy background from palette */
+            color: #ECF0F1;       /* light text from palette */
             line-height: 1.5;
             scroll-behavior: smooth;
         }
 
-        /* New color palette based on user's image */
         :root {
-            --primary-dark: #2C3E50;      /* deep navy/slate */
-            --primary: #34495E;           /* medium slate */
-            --primary-light: #7F8C8D;     /* greyish blue */
-            --accent: #BDC3C7;            /* light silver for accents */
-            --light-bg: #ECF0F1;          /* off-white/very light grey */
+            --primary-dark: #2C3E50;
+            --primary: #34495E;
+            --primary-light: #7F8C8D;
+            --accent: #BDC3C7;
+            --light-bg: #ECF0F1;
             --white: #FFFFFF;
-            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 30px 40px -15px rgba(0, 0, 0, 0.15);
-            --gradient-bg: linear-gradient(135deg, #ECF0F1 0%, #DFE6E9 100%);
-            --gradient-card: linear-gradient(145deg, #FFFFFF 0%, #F8F9FA 100%);
-            --gradient-btn: linear-gradient(90deg, #2C3E50, #34495E);
+            --card-bg: #34495E;      /* cards slightly lighter than body */
+            --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 30px 40px -15px rgba(0, 0, 0, 0.5);
+            --gradient-bg: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+            --gradient-card: linear-gradient(145deg, #3A546D 0%, #2C3E50 100%);
+            --gradient-btn: linear-gradient(90deg, #2C3E50, #1A2A38);
         }
 
         /* 3D & glass effects */
@@ -53,9 +54,9 @@
 
         /* Navigation */
         header {
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(44, 62, 80, 0.95);
             backdrop-filter: blur(12px);
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -72,7 +73,7 @@
         .logo {
             font-size: 1.7rem;
             font-weight: 800;
-            background: linear-gradient(130deg, var(--primary-dark), var(--primary-light));
+            background: linear-gradient(130deg, #ECF0F1, #BDC3C7);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -86,11 +87,11 @@
         nav ul li a {
             text-decoration: none;
             font-weight: 600;
-            color: var(--primary-dark);
+            color: #ECF0F1;
             transition: 0.2s;
             font-size: 1rem;
         }
-        nav ul li a:hover { color: var(--primary-light); text-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        nav ul li a:hover { color: #BDC3C7; text-shadow: 0 1px 3px rgba(0,0,0,0.05); }
 
         /* sections */
         section {
@@ -113,7 +114,7 @@
             height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid white;
+            border: 4px solid #BDC3C7;
             box-shadow: var(--shadow-md);
             margin-bottom: 1.5rem;
             transition: transform 0.3s;
@@ -122,7 +123,7 @@
         h1 {
             font-size: 3.2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+            background: linear-gradient(135deg, #ECF0F1, #BDC3C7, #7F8C8D);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -131,18 +132,18 @@
         h2 {
             font-size: 1.6rem;
             font-weight: 600;
-            color: var(--primary-dark);
+            color: #ECF0F1;
             margin-bottom: 0.8rem;
             letter-spacing: -0.2px;
         }
         .hero p {
             font-size: 1.1rem;
-            color: #3a546d;
+            color: #BDC3C7;
             max-width: 650px;
             margin: 1rem auto;
         }
 
-        /* stats */
+        /* stats cards */
         .stats-grid {
             display: flex;
             flex-wrap: wrap;
@@ -151,19 +152,20 @@
             margin: 2rem 0;
         }
         .stat-card {
-            background: var(--white);
+            background: var(--card-bg);
             border-radius: 28px;
             padding: 1.5rem 1.8rem;
             text-align: center;
             min-width: 150px;
             box-shadow: var(--shadow-sm);
-            border-bottom: 4px solid var(--primary);
+            border-bottom: 4px solid #7F8C8D;
             transition: 0.25s;
+            color: #ECF0F1;
         }
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
-            background: linear-gradient(145deg, var(--primary-dark), var(--primary));
+            background: linear-gradient(145deg, #ECF0F1, #BDC3C7);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -180,24 +182,24 @@
             font-weight: 700;
             margin: 0.4rem;
             transition: all 0.25s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             border: none;
             cursor: pointer;
         }
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 20px -8px rgba(44,62,80,0.4);
-            background: linear-gradient(90deg, #1a2a38, #2c3e50);
+            box-shadow: 0 12px 20px -8px rgba(0,0,0,0.5);
+            background: linear-gradient(90deg, #1A2A38, #2C3E50);
         }
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary-dark);
+            border: 2px solid #7F8C8D;
+            color: #ECF0F1;
             box-shadow: none;
         }
         .btn-outline:hover {
-            background: var(--primary);
-            color: white;
+            background: #7F8C8D;
+            color: #2C3E50;
             transform: translateY(-2px);
         }
 
@@ -208,7 +210,7 @@
             margin: 1.8rem 0 2rem;
             display: inline-block;
             position: relative;
-            background: linear-gradient(120deg, var(--primary-dark), var(--primary-light));
+            background: linear-gradient(120deg, #ECF0F1, #BDC3C7);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -220,7 +222,7 @@
             left: 0;
             width: 70%;
             height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary-light));
+            background: linear-gradient(90deg, #7F8C8D, #BDC3C7, #ECF0F1);
             border-radius: 3px;
         }
 
@@ -236,9 +238,10 @@
             padding: 1.6rem;
             box-shadow: var(--shadow-sm);
             transition: all 0.3s ease;
-            border-left: 6px solid var(--primary);
+            border-left: 6px solid #7F8C8D;
             position: relative;
             overflow: hidden;
+            color: #ECF0F1;
         }
         .project-card::before {
             content: '';
@@ -247,21 +250,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at top right, rgba(127,140,141,0.04), transparent);
+            background: radial-gradient(circle at top right, rgba(127,140,141,0.1), transparent);
             pointer-events: none;
         }
-        .project-card h3 { font-size: 1.5rem; margin-bottom: 0.6rem; color: var(--primary-dark); }
+        .project-card h3 { font-size: 1.5rem; margin-bottom: 0.6rem; color: #ECF0F1; }
         .project-card img {
             width: 100%;
             border-radius: 20px;
             margin: 14px 0;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
         }
 
         .tech-tag {
             display: inline-block;
-            background: #eef2f5;
-            color: var(--primary-dark);
+            background: #2C3E50;
+            color: #BDC3C7;
             font-size: 0.7rem;
             padding: 0.3rem 0.7rem;
             border-radius: 30px;
@@ -274,14 +277,14 @@
         .skill-item { margin: 1.2rem 0; }
         .skill-label { font-weight: 700; margin-bottom: 0.4rem; display: flex; justify-content: space-between; }
         .progress-bar {
-            background: #d5dee3;
+            background: #1A2A38;
             border-radius: 30px;
             overflow: hidden;
             height: 10px;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
         }
         .progress-fill {
-            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            background: linear-gradient(90deg, #7F8C8D, #BDC3C7);
             width: 0%;
             height: 100%;
             border-radius: 30px;
@@ -290,15 +293,16 @@
 
         .skill-badge {
             display: inline-block;
-            background: #eef2f5;
-            color: var(--primary-dark);
+            background: #2C3E50;
+            color: #ECF0F1;
             padding: 0.4rem 1.2rem;
             border-radius: 40px;
             font-size: 0.85rem;
             margin: 0.25rem;
             font-weight: 500;
+            border: 1px solid #7F8C8D;
         }
-        .skill-badge:hover { background: var(--primary-light); color: white; transform: scale(1.02); }
+        .skill-badge:hover { background: #7F8C8D; color: #2C3E50; transform: scale(1.02); }
 
         .cert-list {
             list-style: none;
@@ -308,26 +312,28 @@
             margin-top: 1rem;
         }
         .cert-list li {
-            background: white;
+            background: #2C3E50;
             padding: 0.6rem 1.2rem;
             border-radius: 50px;
             box-shadow: var(--shadow-sm);
             font-weight: 500;
             transition: 0.2s;
+            color: #ECF0F1;
+            border: 1px solid #7F8C8D;
         }
-        .cert-list li i { color: var(--primary); margin-right: 0.5rem; }
-        .cert-list li:hover { transform: translateY(-3px); background: #f9fbfc; }
+        .cert-list li i { color: #BDC3C7; margin-right: 0.5rem; }
+        .cert-list li:hover { transform: translateY(-3px); background: #34495E; }
 
         .competency-badge {
             display: inline-block;
-            background: #eef2f5;
-            color: #2C3E50;
+            background: #2C3E50;
+            color: #ECF0F1;
             padding: 0.45rem 1.2rem;
             border-radius: 40px;
             font-size: 0.85rem;
             margin: 0.25rem;
             font-weight: 500;
-            border-left: 2px solid var(--primary);
+            border-left: 3px solid #7F8C8D;
         }
 
         .contact-links {
@@ -338,24 +344,25 @@
             margin: 1.5rem 0;
         }
         .contact-links a {
-            background: white;
+            background: #2C3E50;
             padding: 0.6rem 1.4rem;
             border-radius: 60px;
             text-decoration: none;
-            color: var(--primary-dark);
+            color: #ECF0F1;
             font-weight: 600;
             box-shadow: var(--shadow-sm);
             transition: 0.2s;
+            border: 1px solid #7F8C8D;
         }
-        .contact-links a:hover { transform: translateY(-3px); background: var(--primary); color: white; }
+        .contact-links a:hover { transform: translateY(-3px); background: #7F8C8D; color: #2C3E50; }
 
         footer {
             text-align: center;
             padding: 2rem;
-            background: #d5dee3;
-            color: #2C3E50;
+            background: #1A2A38;
+            color: #BDC3C7;
             font-weight: 500;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            border-top: 1px solid #7F8C8D;
         }
         @media (max-width: 700px) {
             nav { flex-direction: column; gap: 0.8rem; }
@@ -380,9 +387,11 @@
 </header>
 
 <main>
+    <!-- ========== HERO SECTION ========== -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <img src="profile.jpg" alt="Safa Moeen" class="profile-pic" onerror="this.src='https://via.placeholder.com/160?text=Safa'">
+            <!-- 🔹 CHANGE THIS: Replace "profile.jpg" with your actual profile picture filename -->
+            <img src="C:\Users\adilm\OneDrive\Pictures\Screenshots\Screenshot 2026-06-12 231625.png" alt="Safa Moeen" class="profile-pic" onerror="this.src='https://via.placeholder.com/160?text=Safa'">
             <h1>Safa Moeen</h1>
             <h2>Data Analyst | Financial Analyst | Power BI & SQL Expert</h2>
             <p>B.Com (Finance) with hands‑on freelance experience. I blend financial acumen and data analytics to deliver 75% faster reporting, cost reductions, and actionable insights.</p>
@@ -393,67 +402,82 @@
                 <div class="stat-card"><div class="stat-number">93%</div><div>Budget Waste Identified</div></div>
             </div>
             <a href="#projects" class="btn"><i class="fas fa-folder-open"></i> Explore Work</a>
-            <a href="Safa_Moeen__CV.pdf" download class="btn btn-outline"><i class="fas fa-file-pdf"></i> Data CV</a>
+            <!-- 🔹 BUTTON TEXT CHANGED TO "CV" (was "Data CV") -->
+            <a href="Safa_Moeen__CV.pdf" download class="btn btn-outline"><i class="fas fa-file-pdf"></i> CV</a>
         </div>
     </section>
 
+    <!-- ========== PROJECTS SECTION ========== -->
     <section id="projects">
         <h2 class="section-title">Featured Analytics & Finance Projects</h2>
         <div class="projects-grid">
+            <!-- Project 1 -->
             <div class="project-card">
                 <h3><i class="fas fa-chart-line"></i> Campaign ROI Dashboard</h3>
                 <div><span class="tech-tag">Power BI</span><span class="tech-tag">SQL</span><span class="tech-tag">DAX</span></div>
                 <p>Cleaned 5k rows, built DAX, identified <strong>93% budget waste</strong> ($604M ad spend) – actionable reallocation.</p>
-                <img src="campaign-roi.png" alt="ROI Dashboard" onerror="this.style.display='none'">
+                <!-- 🔹 CHANGE IMAGE FILENAME: replace "campaign-roi.png" with your actual image -->
+                <img src="C:\Users\adilm\OneDrive\Pictures\Screenshots\Screenshot 2026-06-13 203006.png" alt="ROI Dashboard" onerror="this.style.display='none'">
                 <div>
                     <a href="https://github.com/safamoeen4545-debug/Marketing-Campaign-ROI-project" target="_blank" class="btn" style="padding:0.4rem 1rem;">GitHub →</a>
                     <a href="#" class="btn btn-outline" style="padding:0.4rem 1rem;">Live Demo (soon)</a>
                 </div>
             </div>
+            <!-- Project 2 -->
             <div class="project-card">
                 <h3><i class="fas fa-file-invoice-dollar"></i> P&L + Balance Sheet Dashboard</h3>
                 <div><span class="tech-tag">Power BI</span><span class="tech-tag">GAAP/IFRS</span></div>
                 <p>Transformed raw accounting data (journal → trial balance → P&L, Balance Sheet). Visualized key financial ratios, expense breakdowns, and profitability.</p>
-                <img src="financial-dashboard.png" alt="Financial Dashboard" onerror="this.style.display='none'">
+                <!-- 🔹 CHANGE IMAGE FILENAME: replace "financial-dashboard.png" -->
+                <img src="C:\Users\adilm\OneDrive\Pictures\Screenshots\Screenshot 2026-06-13 203205.png" alt="Financial Dashboard" onerror="this.style.display='none'">
                 <div>
                     <a href="https://github.com/safamoeen4545-debug/Financial-Statements-PL-BS-Dashboard" target="_blank" class="btn" style="padding:0.4rem 1rem;">GitHub →</a>
                     <a href="#" class="btn btn-outline" style="padding:0.4rem 1rem;">Live Demo</a>
                 </div>
             </div>
+            <!-- Project 3 -->
             <div class="project-card">
                 <h3><i class="fas fa-shopping-cart"></i> E‑commerce Sales Dashboard</h3>
                 <div><span class="tech-tag">Power BI</span><span class="tech-tag">Excel</span></div>
                 <p><strong>$438K revenue</strong>, $37K profit, AOV $121. Monthly trends & sub‑category analysis for inventory focus.</p>
-                <img src="ecommerce-product.png" alt="E‑commerce Dashboard" onerror="this.style.display='none'">
+                <!-- 🔹 CHANGE IMAGE FILENAME: replace "ecommerce-product.png" -->
+                <img src="C:\Users\adilm\OneDrive\Pictures\Screenshots\Screenshot 2026-06-13 230142.png" alt="E‑commerce Dashboard" onerror="this.style.display='none'">
                 <div>
                     <a href="https://github.com/safamoeen4545-debug/E-commerce-Sales-Dashboardqw3" target="_blank" class="btn" style="padding:0.4rem 1rem;">GitHub →</a>
                     <a href="#" class="btn btn-outline" style="padding:0.4rem 1rem;">Live Demo</a>
                 </div>
             </div>
+            <!-- Project 4 -->
             <div class="project-card">
                 <h3><i class="fas fa-bed"></i> Sleep Study & Wellness Analytics</h3>
                 <div><span class="tech-tag">Power BI</span><span class="tech-tag">Statistics</span></div>
                 <p>100+ respondents: phone users report <strong>27% higher tiredness</strong> with same sleep hours – data‑driven health insight.</p>
-                <img src="sleep-dashboard.png" alt="Sleep Dashboard" onerror="this.style.display='none'">
+                <!-- 🔹 CHANGE IMAGE FILENAME: replace "sleep-dashboard.png" -->
+                <img src="C:\Users\adilm\OneDrive\Pictures\Screenshots\Screenshot 2026-06-08 201812.png"alt="Sleep Dashboard" onerror="this.style.display='none'">
                 <div><a href="https://github.com/safamoeen4545-debug" target="_blank" class="btn" style="padding:0.4rem 1rem;">GitHub →</a></div>
             </div>
+            <!-- Project 5 -->
             <div class="project-card">
                 <h3><i class="fas fa-music"></i> Music Store SQL Analysis</h3>
                 <div><span class="tech-tag">MySQL</span><span class="tech-tag">Window Functions</span></div>
                 <p>Advanced queries (JOIN, CTEs) on 11 tables – top customers, best‑selling genres, revenue by country.</p>
-                <img src="music-sql-output.png" alt="SQL output" onerror="this.style.display='none'">
+                <!-- 🔹 CHANGE IMAGE FILENAME: replace "music-sql-output.png" -->
+                <img src="C:\Users\adilm\OneDrive\Pictures\Screenshots\Screenshot 2026-02-24 005840.png" alt="SQL output" onerror="this.style.display='none'">
                 <div><a href="https://github.com/safamoeen4545-debug/Music-Store-Analysis" target="_blank" class="btn" style="padding:0.4rem 1rem;">GitHub →</a></div>
             </div>
+            <!-- Project 6 -->
             <div class="project-card">
                 <h3><i class="fas fa-database"></i> SQL Retail Sales Analysis</h3>
                 <div><span class="tech-tag">MySQL</span><span class="tech-tag">Aggregations</span></div>
                 <p>Complex JOINs, grouping – top‑selling products and customer spending patterns.</p>
-                <img src="retail-sql.png" alt="Retail SQL" onerror="this.style.display='none'">
+                <!-- 🔹 CHANGE IMAGE FILENAME: replace "retail-sql.png" -->
+                <img src="C:\Users\adilm\OneDrive\Pictures\Screenshots\Screenshot 2026-04-18 193213.png" alt="Retail SQL" onerror="this.style.display='none'">
                 <div><a href="https://github.com/safamoeen4545-debug" target="_blank" class="btn" style="padding:0.4rem 1rem;">GitHub →</a></div>
             </div>
         </div>
     </section>
 
+    <!-- ========== SKILLS SECTION ========== -->
     <section id="skills">
         <h2 class="section-title">Technical & Financial Proficiencies</h2>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
@@ -476,7 +500,7 @@
         </ul>
         
         <div style="margin-top: 2rem;">
-            <h3 style="font-size:1.3rem; font-weight:600; color: var(--primary-dark); margin-bottom:1rem;"><i class="fas fa-chart-pie"></i> Core Finance & Analytics Competencies</h3>
+            <h3 style="font-size:1.3rem; font-weight:600; color: #ECF0F1; margin-bottom:1rem;"><i class="fas fa-chart-pie"></i> Core Finance & Analytics Competencies</h3>
             <div>
                 <span class="competency-badge"><i class="fas fa-calculator"></i> Cost & Management Accounting</span>
                 <span class="competency-badge"><i class="fas fa-chart-line"></i> Variance Analysis</span>
@@ -488,9 +512,10 @@
         </div>
     </section>
 
-    <section style="background: #eef2f5; border-radius: 42px; margin: 1rem auto; padding: 2rem;">
+    <!-- ========== EXPERIENCE SECTION ========== -->
+    <section style="background: #1A2A38; border-radius: 42px; margin: 1rem auto; padding: 2rem;">
         <h2 class="section-title">Experience Snapshot (Data + Finance)</h2>
-        <div class="project-card" style="background: white;">
+        <div class="project-card" style="background: #2C3E50;">
             <h3>Junior Data Analyst (Freelance) – UK Cycle Shop</h3>
             <ul style="margin-left: 1.5rem;">
                 <li>Automated Excel dashboards, processed 500+ transactions with 100% accuracy – <strong>75% time saving</strong>.</li>
@@ -498,7 +523,7 @@
                 <li>Created P&L style reports for owner: revenue vs expenses, profit margins, top products.</li>
             </ul>
         </div>
-        <div class="project-card" style="margin-top: 1rem; background: white;">
+        <div class="project-card" style="margin-top: 1rem; background: #2C3E50;">
             <h3>Academic & Finance Projects</h3>
             <ul>
                 <li>Prepared full financial statements (Income Statement, Balance Sheet) per GAAP/IFRS using Excel.</li>
@@ -506,12 +531,13 @@
                 <li>Calculated income tax for corporate & individual cases – applied tax laws.</li>
             </ul>
         </div>
-        <div class="project-card" style="margin-top: 1rem; background: white;">
+        <div class="project-card" style="margin-top: 1rem; background: #2C3E50;">
             <h3>Tata GenAI Data Analytics Simulation</h3>
             <ul><li>AI‑driven exploratory analysis, predictive insights, business reporting.</li></ul>
         </div>
     </section>
 
+    <!-- ========== CONTACT SECTION ========== -->
     <section id="contact" style="text-align:center;">
         <h2 class="section-title">Let's Connect</h2>
         <div class="contact-links">
@@ -528,6 +554,7 @@
 </footer>
 
 <script>
+    // Animate progress bars on scroll
     const progressBars = document.querySelectorAll('.progress-fill');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
